@@ -8,7 +8,7 @@ from PIL import Image  # Import the Image module from PIL
 app = Flask(__name__)
 
 # Apply CORS policy for the frontend
-CORS(app, origins="http://localhost:3000")  # Update with your React frontend URL if different
+CORS(app, origins="https://omiemomify.netlify.app")  # Update with your React frontend URL if different
 
 def remove_background(image):
     """Remove the background using rembg."""
