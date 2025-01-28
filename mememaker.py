@@ -66,6 +66,6 @@ def process_image():
 
 if __name__ == '__main__':
     
-    port = int(os.getenv("PORT", 8000))
+    port = int(os.getenv("PORT", 10000))
 
     app.run(debug=True, port=port, host='0.0.0.0')
