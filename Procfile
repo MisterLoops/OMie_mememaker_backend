@@ -1,1 +1,1 @@
-web: python mememaker.py
+web: python mememaker.py --port 8080
