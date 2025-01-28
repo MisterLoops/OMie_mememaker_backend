@@ -3,7 +3,7 @@ from rembg import new_session, remove
 from io import BytesIO
 from flask_cors import CORS  # Import CORS to handle cross-origin requests
 from PIL import Image  # Import the Image module from PIL
-
+import os
 
 app = Flask(__name__)
 
@@ -65,4 +65,7 @@ def process_image():
         return jsonify({"error": "An error occurred while processing the image."})
 
 if __name__ == '__main__':
-    app.run(debug=True, port=8080)
+    
+    port = int(os.getenv("PORT", 8080))
+
+    app.run(debug=True, port=port)
