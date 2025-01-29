@@ -1,1 +1,2 @@
-web: python mememaker.py
+web: gunicorn mememaker:app
+
