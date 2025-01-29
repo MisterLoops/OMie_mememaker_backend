@@ -1,5 +1,5 @@
 from flask import Flask, request, send_file, jsonify
-from rembg import new_session, remove
+from rembg import remove
 from io import BytesIO
 from flask_cors import CORS  # Import CORS to handle cross-origin requests
 from PIL import Image  # Import the Image module from PIL
@@ -21,8 +21,6 @@ def remove_background(image):
         image.save(img_byte_arr, format='PNG')  # Save image to byte array
         img_byte_arr.seek(0)  # Go to the beginning of the byte stream
 
-        model_name = "isnet-anime"
-        rembg_session = new_session(model_name)
         
         print("Sending image to rembg for background removal.")
         output = remove(img_byte_arr.read(), post_process_mask=True)  # Use rembg to remove the background
