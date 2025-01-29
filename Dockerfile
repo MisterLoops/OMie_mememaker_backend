@@ -32,5 +32,5 @@ ENV FLASK_APP=mememaker.py
 # Expose the port that the app will run on
 EXPOSE 8080
 
-# Run the application using Gunicorn (or Flask, if you prefer)
-CMD ["gunicorn", "--bind", "0.0.0.0:8080", "mememaker:app"]
+# Run the application using Flask (in production, using app.run() with host='0.0.0.0')
+CMD ["python", "mememaker.py"]
